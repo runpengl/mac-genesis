@@ -15,7 +15,7 @@ alias home='cd ~'
 alias mkdir='mkdir -pv' # make parent dirs on demand
 alias md='mkdir'
 alias mv='mv -vi'
-alias rm='rm -vi'
+alias rm='rm -v'
 alias rmrf='rm -rf'
 alias cp='cp -v'
 
@@ -89,9 +89,14 @@ export NVM_DIR=/Users/$USER/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # loads nvm
 alias nvmu='nvm use'
 
+# Mongo
+alias mongod!='mongod --config /usr/local/etc/mongod.conf --fork' # runs mongo service in background
+
 # Git
 alias g='git'
 alias ga='git add'
+alias ga!='git add -A'
+alias gac='git add -A && git commit -m'
 alias gb='git branch'
 alias gc='git commit -m'
 alias gch='git checkout'
