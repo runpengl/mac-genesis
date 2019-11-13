@@ -43,6 +43,7 @@ alias bci='brew cask install'
 export ANDROID_HOME=/Users/$USER/Library/Android/sdk
 export PATH=$ANDROID_HOME/platform-tools:$PATH
 export PATH=$ANDROID_HOME/tools:$PATH
+export OPENCVROOT=$ANDROID_HOME/OpenCV-android-sdk/sdk
 alias adi='adb install -r'
 alias adu='adb uninstall'
 alias adl='adb logcat'
@@ -116,6 +117,7 @@ alias di='dk images'
 alias dpl='dk pull'
 alias dpu='dk push'
 alias dps='dk ps'
+alias dr='dk run'
 alias dsall='dk stop $(docker ps -a -q)'
 alias drmall='dk rm $(docker ps -a -q)'
 
