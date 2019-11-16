@@ -93,6 +93,15 @@ alias nvmu='nvm use'
 # Mongo
 alias mongod!='mongod --config /usr/local/etc/mongod.conf --fork' # runs mongo service in background
 
+# SQL
+alias mysql=mycli
+alias msql=mysql
+alias msq=mysql
+alias msl=mysql
+alias psql=pgcli
+alias psq=psql
+alias psl=psql
+
 # Git
 alias g='git'
 alias ga='git add'

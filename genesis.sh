@@ -43,6 +43,16 @@ if [ ! -x "$(command -v mongod)" ]; then
     brew install mongodb-community@${MONGODB_VERSION}
 fi
 
+# MySQL cli
+if [ ! -x "$(command -v mycli)" ]; then
+    brew install mycli
+fi
+
+# PostgreSQL cli
+if [ ! -x "$(command -v pgcli)" ]; then
+    brew install pgcli
+fi
+
 # Kubernetes
 if [ ! -x "$(command -v kubectl)" ]; then
     curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/darwin/amd64/kubectl
