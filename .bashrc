@@ -114,7 +114,7 @@ alias gcl='git clone'
 alias gi='git init'
 alias gm='git merge'
 alias gpl='git pull'
-alias gps='git push -u origin HEAD'
+alias gps='git push'
 alias gs='git status'
 
 # Docker
