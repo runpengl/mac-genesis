@@ -90,6 +90,16 @@ export NVM_DIR=/Users/$USER/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # loads nvm
 alias nvmu='nvm use'
 
+# .NET
+alias dn='dotnet'
+alias dna='dn add'
+alias dnb='dn build'
+alias dnc='dn clean'
+alias dnp='dn publish'
+alias dnn='dn new'
+alias dnr='dn run'
+alias dnrm='dn remove'
+
 # Mongo
 alias mongod!='mongod --config /usr/local/etc/mongod.conf --fork' # runs mongo service in background
 
@@ -154,6 +164,9 @@ alias tff='tf fmt'
 alias tfg='tf get'
 alias tfgr='tf graph'
 alias tfi='tf init'
+
+# GCP
+alias gcp='gcloud'
 
 # SSH auto-completion based on entries in known_hosts
 if [[ -e ~/.ssh/known_hosts ]]; then
