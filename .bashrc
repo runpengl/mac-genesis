@@ -2,6 +2,9 @@
 export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
+# Timezone
+export TZ=":Etc/UTC"
+
 # Filesystem
 alias ls='ls -G'
 alias ll='ls -la'
@@ -70,6 +73,8 @@ alias pyir='pip install -r'
 alias pyir!='pip install -r requirements.txt'
 alias pyu='pip uninstall'
 alias pyl='pip list'
+alias pe='pipenv'
+alias pei='pipenv install'
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
@@ -116,9 +121,9 @@ alias psl=psql
 alias g='git'
 alias ga='git add'
 alias ga!='git add -A'
-alias gac='git add -A && git commit -m'
+alias gac='git add -A && git commit'
 alias gb='git branch'
-alias gc='git commit -m'
+alias gc='git commit'
 alias gch='git checkout'
 alias gcl='git clone'
 alias gi='git init'
@@ -126,6 +131,9 @@ alias gm='git merge'
 alias gpl='git pull'
 alias gps='git push'
 alias gs='git status'
+alias gsm='git submodule'
+alias gsmu='git submodule update'
+alias gsm!='git submodule update --init --recursive'
 
 # Docker
 alias dk='docker'
