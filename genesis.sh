@@ -5,6 +5,10 @@ if [ ! -x "$(command -v brew)" ]; then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
+if [ ! -x "$(command -v jq)" ]; then
+  brew install jq
+fi
+
 # Upgrade Bash to v5.0+
 LOCAL_BASH="/usr/local/bin/bash"
 if [ ! -f "$LOCAL_BASH" ]; then
@@ -60,15 +64,19 @@ if [ ! -x "$(command -v kubectl)" ]; then
     mv ./kubectl /usr/local/bin/kubectl
 fi
 
+# Helm
+if [ ! -x "$(command -v helm)" ]; then
+    brew install helm
+fi
+
 # Terraform
-TERRAFORM_VERSION=0.12.13
-if [ ! -x "$(command -v terraform)" ]; then
-    TERRAFORM_ZIP=terraform_${TERRAFORM_VERSION}_darwin_amd64.zip
-    wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/${TERRAFORM_ZIP}
-    unzip $TERRAFORM_ZIP
-    rm $TERRAFORM_ZIP
-    chmod +x ./terraform
-    mv ./terraform /usr/local/bin/terraform
+TERRAFORM_VERSION=0.13.1
+if [ ! -x "$(command -v tfenv)" ]; then
+    rm -rf ~/.tfenv && rm -rf /usr/local/bin/terraform && rm -rf /usr/local/bin/tfenv && \
+    git clone https://github.com/tfutils/tfenv.git ~/.tfenv && \
+    ln -s ~/.tfenv/bin/* /usr/local/bin && \
+    tfenv install $TERRAFORM_VERSION && \
+    tfenv use $TERRAFORM_VERSION
 fi
 
 # AWS-cli
